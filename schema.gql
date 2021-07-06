@@ -1,0 +1,25 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ProductDTO {
+  id: ID!
+  name: String!
+  cost: Int!
+}
+
+type Query {
+  products: [ProductDTO!]!
+  oneproduct(id: String!): ProductDTO!
+}
+
+type Mutation {
+  create(input: ProductInput!): ProductDTO!
+  update(input: ProductInput!, id: String!): ProductDTO!
+  delete(id: String!): ProductDTO!
+}
+
+input ProductInput {
+  name: String!
+  cost: Int!
+}

@@ -1,0 +1,34 @@
+// import { Injectable } from '@nestjs/common';
+// import { Ability,AbilityBuilder,AbilityClass,ExtractSubjectType } from '@casl/ability';
+
+// import {CHECK_POLICIES_KEY} from '../decorator/checkpolicies.decorator';
+
+// @Injectable()
+// export class PoliciesGuard implements CanActivate {
+//   constructor(
+//     private reflector: Reflector,
+//     private caslAbilityFactory: CaslAbilityFactory,
+//   ) {}
+
+//   async canActivate(context: ExecutionContext): Promise<boolean> {
+//     const policyHandlers =
+//       this.reflector.get<PolicyHandler[]>(
+//         CHECK_POLICIES_KEY,
+//         context.getHandler(),
+//       ) || [];
+
+//     const { user } = context.switchToHttp().getRequest();
+//     const ability = this.caslAbilityFactory.createForUser(user);
+
+//     return policyHandlers.every((handler) =>
+//       this.execPolicyHandler(handler, ability),
+//     );
+//   }
+
+//   private execPolicyHandler(handler: PolicyHandler, ability: AppAbility) {
+//     if (typeof handler === 'function') {
+//       return handler(ability);
+//     }
+//     return handler.handle(ability);
+//   }
+// }
